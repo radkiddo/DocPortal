@@ -1,0 +1,45 @@
+<html>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="js/pdf.min.js"></script>
+    
+    <script src="js/jquery-pdfdoc.js"></script>
+
+    <link href="js/jquery-pdfdoc.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+    <div style="width: 695px; height: 890px;">
+
+        <div id="mypdfdoc"></div>
+
+    </div>
+
+    <script>
+    	function getURLParameter(name) {
+    		return decodeURI((RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1]);
+		}
+		
+		var name = getURLParameter('title');
+		var url = 'articles/' + getURLParameter('url');
+    
+        $(document).ready(function(){
+
+            $('#mypdfdoc').PDFDoc( { source : url } );
+
+        });
+    </script>
+
+</body>
+
+<script src="js/easyXDM.min.js"></script>
+<script>
+	var socket = new easyXDM.Socket({
+		remote : 'http://localhost:3000',
+		onReady: function() {
+        	socket.postMessage(document.body.scrollHeight);
+    	}
+	});
+</script>
+
+</html>

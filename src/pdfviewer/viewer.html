@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Viewer</title>
+    
+    <link rel="stylesheet" href="js/ext-all.css">
+    <link rel="stylesheet" href="js/TextLayerBuilder.css">
+    
+    <script src="js/ext-all.js"></script>
+    <script src="js/compatibility.js"></script>
+    <script src="js/pdf.min.js"></script>
+    <script src="js/PDFext.js"></script>
+    <script src="js/TextLayerBuilder.js"></script>
+    
+    <script>
+    
+    	function getURLParameter(name) {
+    		return decodeURI((RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1]);
+		}
+		
+		var name = getURLParameter('title');
+		var url = 'articles/' + getURLParameter('url');
+    
+        Ext.onReady(function(){
+            Ext.tip.QuickTipManager.init();
+            
+            Ext.create('Ext.ux.panel.PDF', {
+                title    : name,
+                width    : 689,
+                height   : 633,
+                pageScale: 1,                                           // Initial scaling of the PDF. 1 = 100%
+                src      : url, // URL to the PDF - Same Domain or Server with CORS Support
+                renderTo : main
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="main">
+</div>
+</body>
+
+<script src="js/easyXDM.min.js"></script>
+<script>
+	var socket = new easyXDM.Socket({
+		remote : 'http://localhost:3000',
+		onReady: function() {
+        	socket.postMessage(document.body.scrollHeight);
+    	}
+	});
+</script>
+
+</html>

@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Doc Portal" />
+    <meta name="author" content="Doksend" />
+    <meta name="keywords" content="Doc Portal" />
+
+	<link href="css/jquery.reject.css" rel="stylesheet" />
+    <link href="css/modern-red.css" rel="stylesheet" />
+    <link href="css/modern-responsive.css" rel="stylesheet" />
+    <link href="css/site.css" rel="stylesheet" type="text/css" />
+    <link href="js/google-code-prettify/prettify.css" rel="stylesheet" type="text/css" />
+    
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+    <title>Doc Portal</title>
+</head>
+
+<body class="modern-ui" onload="prettyPrint()">
+
+<div class="page">
+<div id="MenuMainDiv" class="nav-bar" style="display: none">
+	<div class="nav-bar-inner padding10">
+        <span class="pull-menu"></span>
+
+        <a href="#/"><span class="element brand">
+            Doc Portal <small></small>
+        </span></a>
+
+		<ul id="MenuMain" class="menu">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li><a href="#/">Home</a></li>
+    		<li><a href="#/login">Login</a></li>        		
+    		<li><a href="#/signup">Sign Up</a></li>
+        	<li><a href="#/about">About</a></li>
+    	</ul>
+        
+    </div>
+</div>
+
+<div id="MenuPortalDiv" class="nav-bar" style="display: none">
+	<div class="nav-bar-inner padding10">
+        <span class="pull-menu"></span>
+
+        <a href="#/"><span class="element brand">
+            Doc Portal <small</small>
+        </span></a>
+
+        <ul id="MenuPortal" class="menu">
+        	<li></li>
+			<li></li>
+			<li></li>
+			<li><a href="#/">Home</a></li>
+        	<li><a href="#/logout">Logout</a></li>
+        	<li><a href="#/usersettings">User Settings</a></li>
+        </ul>
+        
+    </div>
+</div>
+
+<div id="MenuLogoutDiv" class="nav-bar" style="display: none">
+	<div class="nav-bar-inner padding10">
+        <span class="pull-menu"></span>
+
+        <a href="#/"><span class="element brand">
+            Doc Portal <small</small>
+        </span></a>
+
+       	<ul id="MenuLogout" class="menu">
+       		<li></li>
+			<li></li>
+			<li></li>
+			<li><a href="#/">Home</a></li>
+        	<li><a href="#/usersettings">User Settings</a></li>
+        </ul>
+        
+    </div>
+</div>
+</div>
+
+<div class="page" id="page-index" style="display: none">
+	<div class="page-region">
+        <div class="page-region-content">
+            <div class="grid">
+                
+                <div class="row">
+                    <div class="span12 padding10 fg-color-darken text-center">
+                        Welcome to the Doc Portal
+                    </div>
+                </div>
+                
+                <br />
+                
+                <div class="row">
+                    <div class="span8">
+                        <div class="hero-unit">
+                            <div id="carousel1" class="carousel">
+                                <div class="slides">
+                                
+                                	<div class="slide" id="slide1" style="display: none">
+                                        <h2>Access to Technical Articles</h2>
+										<br />
+                                        <p class="bg-color-orange padding20 fg-color-white">
+                                        The KB Portal allows you find quickly and easy eFlow technical related articles.</p>
+                                        <br />
+                                        <span>
+                                        	<a href="#/signup">Sign Up now</a>
+                                        </span>	
+                                    </div>
+                                    
+                                    <div class="slide" id="slide2" style="display: none">
+                                    	<h2>"Search as you type"</h2>
+										<br />
+                                        <p class="bg-color-orange padding20 fg-color-white">
+                                        Find technical articles by using "Search as you type", just like Google.</p>
+                                        <br />
+                                        <span>
+                                        	<a href="#/login">Have an account? Login...</a>
+                                        </span>
+                                    </div>
+
+								</div>
+								
+								<span id="backSlide" class="control left"><i class="icon-arrow-left-3"></i></span>
+                            	<span id="nextSlide" class="control right"><i class="icon-arrow-right-3"></i></span>
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="span4">
+                        <div class="span4 padding30 text-center place-left bg-color-yellow" id="sponsorBlock">
+                            <br />
+                            <br />
+                            <h2 class="">Already signed up?</h2>
+                            <p class="">If so, then <a class="" href="#/login">Login</a></p>
+                            <br />
+                            <a href="#/signup"><h1><i class="icon-arrow-right-3 fg-color-red"></i></h1></a>
+                        </div>
+                    </div>
+
+				</div>			
+                
+			</div>
+		</div>
+	</div>				
+</div>
+
+<div id="pdfdiv" class="page secondary" style="display: none">
+	<div class="page-header">
+        <div class="page-header-content">
+            <h1 id="pdfh1"><small id="pdfSmall"></small></h1>
+            <a href="#/portal" class="back-button big page-back"></a>
+        </div>
+    </div>
+    
+    <div class="page-region">
+    	<div class="page-region-content">
+            <br />
+            	<p id="pdfN">
+                </p>
+            <br />
+            <p>
+            	Full Text search is coming soon, stay tuned.
+            </p>
+    	</div>
+    </div>
+    
+    <div class="page-region">
+    	<div class="page-region-content">
+    		<div id="mypdfdocdiv" class="span10" style="display: none">
+    			<iframe class="span9" height="390px" id="mypdfdoc" src=""></iframe>
+    		</div>
+    		<div id="preparing_mypdfdocdiv" style="display: none">
+            	<br />
+            	<img src="/images/preloader-w8-cycle-black.gif" />
+    		</div>
+    	</div>
+    </div>
+    <br />
+</div>
+
+<div id="portaldiv" class="page secondary" style="display: none">
+	<div class="page-header">
+        <div class="page-header-content">
+            <h1>Hi, <small id="portalSmall"></small></h1>
+        </div>
+    </div>
+    
+    <div class="page-region">
+    	<div class="page-region-content">
+        	
+        	<div class="span10">
+            	<br />
+				<p>
+                	What are you looking for?
+                </p>
+                <br />
+                
+                <div class="input-control text span9">
+                	<input id="search" type="text" placeholder="type in your keywords">
+                </div>
+                
+                <br />
+                
+                <div id="categoriesdiv" style="display: none">
+                	<p>
+                		Or browse by categories:
+                	</p>
+                	<br />
+  					<ul class="listview fluid" id="categories">
+  					</ul>
+  				</div>
+  				
+  				<div id="namesdiv" style="display: none">
+  					<div id="namescleardiv" style="display: none">
+  					
+  						<div id="ctNameDiv" style="display: none">
+                			<ul class="replies">
+                            	<li class="bg-color-blue">
+                            		<b class="sticker sticker-left sticker-color-blue"></b>
+                                    <div class="avatar"><img src="images/word2013icon.png" /></div>
+                                    <div class="reply">
+                                    	<div id="namescleardivaCtN" class="author"></div>
+                                        <div id="namescleardivaCtD" class="text"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+  						<br />
+  					
+  						<a id="namescleardiva" href="">Back to Categories Overview</a>
+  						<br /><br />
+  					</div>
+  					
+  					<div id="nameslistDiv" style="display: none">
+  						<div id="nameslistDivResult" style="display: none">
+                			<ul class="replies">
+                            	<li class="bg-color-blue">
+                            		<b class="sticker sticker-left sticker-color-blue"></b>
+                                    <div class="avatar"><img src="images/word2013icon.png" /></div>
+                                    <div class="reply">
+                                    	<div class="author">Results</div>
+                                        <div class="text">The following documents match the keywords you typed in.</div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <br />
+                        </div>
+                        <br />
+                        <div>
+  							<ul class="listview fluid" id="names">
+  							</ul>
+  						</div>
+  						<br />
+  					</div>
+  				</div>
+  			
+            </div>
+            
+            <br />
+            
+            <div class="span10">
+            	<p>
+                	Do you have an article ready to publish as a PDF? - Then please email us: <br /><br /><a href="http://safemail.justlikeed.net/" target="_blank"><img src="http://safemail.justlikeed.net/e/c7272f8599ebf1e02930658d95ba30ce.png" border="0" align="absbottom" title="Email image created with safemail.justlikeed.net"></a>
+                </p>
+                <br /><br />
+                <p>
+                	All articles are thoroughly revised before made available and published.
+                </p>
+            </div>
+            
+       	</div>
+	</div>	     	
+</div>
+
+<div id="activationSuccessfulDiv" class="page secondary" style="display: none">
+	<div class="page-header">
+        <div class="page-header-content">
+            <h1>Success<small></small></h1>
+        </div>
+    </div>
+    
+    <div class="page-region">
+    	<div class="page-region-content">
+        	
+            <div class="grid">
+            	<div class="row">
+            	
+            		<div class="span2">
+            		</div>
+            		
+            		<div class="span6">
+            			<br />
+            			<p>
+                        	Hooray! Activation was successful.
+                    	</p>
+                    	
+                    	<br />
+                    	<p>
+                        	Feel free to <a href="#/login">login</a> - cheers.
+                    	</p>
+            		</div>
+            		
+            		<div class="span2">
+            		</div>
+            		
+            	</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="activationFailedDiv" class="page secondary" style="display: none">
+	<div class="page-header">
+        <div class="page-header-content">
+            <h1>Error<small></small></h1>
+        </div>
+    </div>
+    
+    <div class="page-region">
+    	<div class="page-region-content">
+        	
+            <div class="grid">
+            	<div class="row">
+            	
+            		<div class="span2">
+            		</div>
+            		
+            		<div class="span6">
+            			<br />
+            			<p>
+                        	Activation failed, internal error.
+                    	</p>
+                    	
+                    	<br />
+                    	<p>
+                        	Please retry later or contact support.
+                    	</p>
+            		</div>
+            		
+            		<div class="span2">
+            		</div>
+            	</div>
+            </div>
+		</div>
+	</div>
+</div>
+
+<div id="alreadyActivatedDiv" class="page secondary" style="display: none">
+	<div class="page-header">
+        <div class="page-header-content">
+            <h1>Info<small></small></h1>
+        </div>
+    </div>
+    
+    <div class="page-region">
+    	<div class="page-region-content">
+        	
+            <div class="grid">
+            	<div class="row">
+            	
+            		<div class="span2">
+            		</div>
+            		
+            		<div class="span6">
+            			<br />
+            			<p>
+                        	User not found or it has already been activated.
+                    	</p>
+                    	
+                    	<br />
+            		</div>
+            		
+            		<div class="span2">
+            		</div>
+            	</div>
+            </div>
+		</div>
+	</div>		            	
+</div>
+
+<div id="recovereddiv" class="page secondary" style="display: none">
+	<div class="page-header">
+        <div class="page-header-content">
+            <h1>Recovered<small>...</small></h1>
+            <a href="javascript:history.back()" class="back-button big page-back"></a>
+        </div>
+    </div>
+    
+    <div class="page-region">
+    	<div class="page-region-content">
+    	
+    		<div class="grid">
+            	<div class="row">
+            	
+            		<div class="span2">
+            		</div>
+            		
+            		<div class="span6">
+            			<br />
+            			<p>
+                        	Info has been recovered and emailed to you, thanks.
+                    	</p>
+            		</div>
+    	
+    				<div class="span2">
+            		</div>
+            		
+            	</div>
+            </div>
+    	</div>
+    </div>
+</div>
+
+<div id="recoverdiv" class="page secondary" style="display: none">
+	<div class="page-header">
+        <div class="page-header-content">
+            <h1>Recover<small>...</small></h1>
+            <a href="javascript:history.back()" class="back-button big page-back"></a>
+        </div>
+    </div>
+    
+    <div class="page-region">
+    	<div class="page-region-content">
+        	
+            <div class="grid">
+            	<div class="row">
+            	
+            		<div class="span2">
+            		</div>
+            		
+            		<div class="span6">
+            			
+            			<br />
+            			<p>
+                        	Lost your password or your activation email?
+                    	</p>
+                    	
+                    	<br />
+                    	
+                    	<form action="">
+            			
+            				<h5>User name (Email used for signing up)</h5>
+            				<p>
+                				<div class="input-control text span6">
+        							<input id="recoverEmail" type="text" />
+        							<h6 class="smallWeek" id="recoverEmailMsg"></h6>
+    							</div>
+                			</p>
+                			
+                			<button disabled id="recoverButtonEnabled" class="standart bg-color-gray">Recover it</button>
+                			
+                			<div id="recoverUserNotFoundDiv" style="display: none">
+                				<ul class="replies">
+                                	<li class="bg-color-orange">
+                                    	<b class="sticker sticker-left sticker-color-orange"></b>
+                                    	<div class="avatar"><img src="images/myface.jpg" /></div>
+                                    	<div class="reply">
+                                        	<div class="author">Server says:</div>
+                                        	<div class="text">Email address not found. Could not recover any data. Are you sure?</div>
+                                    	</div>
+                                	</li>
+                            	</ul>
+                            </div>
+                            
+                            <div id="recoverUserException" style="display: none">
+                				<ul class="replies">
+                                	<li class="bg-color-red">
+                                    	<b class="sticker sticker-left sticker-color-red"></b>
+                                    	<div class="avatar"><img src="images/myface.jpg" /></div>
+                                    	<div class="reply">
+                                        	<div class="author">Server says:</div>
+                                        	<div class="text">Oops. An internal server exception has occurred. Please try again in a bit or contact support.</div>
+                                    	</div>
+                                	</li>
+                            	</ul>
+                            </div>
+                			
+                		</form>
+                		
+            		</div>
+            		
+            		<div class="span2">
+            		</div>
+            		
+            	</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="logoutdiv" class="page secondary" style="display: none">
+	<div class="page-header">
+        <div class="page-header-content">
+            <h1>Logout<small>...</small></h1>
+            <a href="javascript:history.back()" class="back-button big page-back"></a>
+        </div>
+    </div>
+    
+    <div class="page-region">
+    	<div class="page-region-content">
+        	
+            <div class="grid">
+            	<div class="row">
+            	
+            		<div class="span2">
+            		</div>
+            		
+            		<div class="span6">
+            			<br />
+            			<p>
+                        	Are you sure you want to logout?
+                    	</p>
+                    	
+                    	<br />
+                    	
+                    	<button id="logoutButtonEnabled" class="standart default bg-color-blue">Yes</button>
+            		</div>
+            		
+            		<div class="span2">
+            		</div>
+            	</div>
+            </div>
+        </div>
+    </div>        
+</div>
+
+<div id="page404div" class="page secondary" style="display: none">
+	<div class="page-header">
+        <div class="page-header-content">
+            <h1>404<small>...</small></h1>
+        </div>
+    </div>
+    
+    <div class="page-region">
+    	<div class="page-region-content">
+        	
+            <div class="grid">
+            	<div class="row">
+            	
+            		<div class="span2">
+            		</div>
+            		
+            		<div class="span6">
+            			<br />
+            			<p>
+                        	Oops, the page are looking for does not exist.
+                    	</p>
+                    	
+                    	<br />
+                    	
+                    	<p>
+                        	Please click <a href="#/">here</a> - thanks.
+                    	</p>
+            		</div>
+            		
+            		<div class="span2">
+            		</div>
+            	</div>
+            </div>
+        </div>
+    </div>        
+</div>
+
+<div id="getchromediv" class="page secondary" style="display: none">
+	<div class="page-header">
+        <div class="page-header-content">
+            <h1>Old Browser<small>...</small></h1>
+        </div>
+    </div>
+    
+    <div class="page-region">
+    	<div class="page-region-content">
+        	
+            <div class="grid">
+            	<div class="row">
+            	
+            		<div class="span2">
+            		</div>
+            		
+            		<div class="span6">
+            			<br />
+            			<p>
+                        	Oops, the web browser you are using is not suitable for this web app.
+                    	</p>
+                    	
+                    	<br />
+                    	
+                    	<p>
+                        	Please install a modern browser like <a href="https://www.google.com/intl/en/chrome/browser/">Google Chrome</a> - thanks.
+                    	</p>
+            		</div>
+            		
+            		<div class="span2">
+            		</div>
+            	</div>
+            </div>
+        </div>
+    </div>        
+</div>
+
+<div id="signupActivationDiv" class="page secondary" style="display: none">
+	<div class="page-header">
+        <div class="page-header-content">
+            <h1>Activation Sent<small></small></h1>
+        </div>
+    </div>
+    
+    <div class="page-region">
+    	<div class="page-region-content">
+        	
+            <div class="grid">
+            	<div class="row">
+            	
+            		<div class="span2">
+            		</div>
+            		
+            		<div class="span6">
+            			<br />
+            			<p>
+                        	Thank you for signing up.
+                    	</p>
+                    	<br />
+            			<p>
+                        	An activation email has been sent to your email address.
+                    	</p>
+            		</div>
+            		
+            		<div class="span2">
+            		</div>
+            		
+            	</div>
+           	</div>
+		</div>
+	</div>     	
+</div>
+
+<div id="usersettingsfaileddiv" class="page secondary" style="display: none">
+	<div class="page-header">
+        <div class="page-header-content">
+            <h1>User Settings<small></small></h1>
+            <a href="javascript:history.back()" class="back-button big page-back"></a>
+        </div>
+    </div>
+    
+    <div class="page-region">
+    	<div class="page-region-content">
+        	
+            <div class="grid">
+            	<div class="row">
+            	
+            		<div class="span2">
+            		</div>
+            		
+            		<div class="span6">
+            			<br />
+            			
+            			<p>
+            				Failed to load user settings.
+            			</p>
+            			
+            			<br />
+            			
+            			<p>
+            				Try again or click <a href="#/portal">here</a>.
+            			</p>
+            		</div>
+            		
+            		<div class="span2">
+            		</div>
+            	</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="usersettingsdiv" class="page secondary" style="display: none">
+	<div class="page-header">
+        <div class="page-header-content">
+            <h1>User Settings<small></small></h1>
+            <a href="javascript:history.back()" class="back-button big page-back"></a>
+        </div>
+    </div>
+    
+    <div class="page-region">
+    	<div class="page-region-content">
+        	
+            <div class="grid">
+            	<div class="row">
+            	
+            		<div class="span2">
+            		</div>
+            		
+            		<div class="span6">
+            			<br />
+            			
+            			<p>
+            				Feel free to change them (if necessary).
+            			</p>
+            			
+            			<br />
+            		
+            			<form action="">
+            			
+            				<h5>Your first name</h5>
+            				<p>
+                				<div class="input-control text span6">
+        							<input id="settingsfirstName" type="text" />
+    							</div>
+                			</p>
+                			
+                			<h5>Your last name</h5>
+            				<p>
+                				<div class="input-control text span6">
+        							<input id="settingslastName" type="text" />
+    							</div>
+                			</p>
+                			
+                			<h5>New password</h5>
+            				<p>
+                				<div class="input-control text span6">
+        							<input id="settingsPassword" type="password" />
+        							<h6 class="smallWeek" id="settingsPwdStrength"></h6>
+    							</div>
+                			</p>
+                			
+                			<h5>Retype new password</h5>
+            				<p>
+                				<div class="input-control text span6">
+        							<input id="settingsPasswordRetyped" type="password" />
+        							<h6 class="smallText" id="settingsPwdRetypeStrength"></h6>
+        							<h6 class="smallText" id="settingsPwdNoMatch"></h6>
+    							</div>
+                			</p>
+                			
+                			<br />
+                			
+                			<button disabled id="settingsButtonEnabled" class="standart bg-color-gray">Save</button>
+                			
+                			<div id="settingsUserException" style="display: none">
+                				<ul class="replies">
+                                	<li class="bg-color-red">
+                                    	<b class="sticker sticker-left sticker-color-red"></b>
+                                    	<div class="avatar"><img src="images/myface.jpg" /></div>
+                                    	<div class="reply">
+                                        	<div class="author">Server says:</div>
+                                        	<div class="text">Oops. An internal server exception has occurred. Please try again in a bit or contact support.</div>
+                                    	</div>
+                                	</li>
+                            	</ul>
+                            </div>
+            				
+            			</form>
+            			
+            		</div>
+            		
+            		<div class="span2">
+            		</div>
+            		
+            	</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="signupdiv" class="page secondary" style="display: none">
+	<div class="page-header">
+        <div class="page-header-content">
+            <h1>Sign Up<small> Please enter the following:</small></h1>
+            <a href="javascript:history.back()" class="back-button big page-back"></a>
+        </div>
+    </div>
+    
+    <div class="page-region">
+    	<div class="page-region-content">
+        	
+            <div class="grid">
+            	<div class="row">
+            	
+            		<div class="span2">
+            		</div>
+            		
+            		<div class="span6">
+            			<br />
+            			<p>
+            				This service is by invitation only. If your email is not accepted or you have not been invited yet, please <a href="#/about">contact us</a> to see if you are eligible.
+            			</p>
+            			<br />
+            			
+            			<form action="">
+            			
+            				<h5>Your first name</h5>
+            				<p>
+                				<div class="input-control text span6">
+        							<input id="signupfirstName" type="text" />
+    							</div>
+                			</p>
+                			
+                			<h5>Your last name</h5>
+            				<p>
+                				<div class="input-control text span6">
+        							<input id="signuplastName" type="text" />
+        							<h6 class="smallWeek" id="signupLastNameValid"></h6>
+    							</div>
+                			</p>
+                			
+                			<h5>Your email (will be used as your user name)</h5>
+            				<p>
+                				<div class="input-control text span6">
+        							<input id="signupUserName" type="text" />
+        							<h6 class="smallWeek" id="signupEmailValid"></h6>
+    							</div>
+                			</p>
+                			
+                			<h5>Desired password</h5>
+            				<p>
+                				<div class="input-control text span6">
+        							<input id="signupPassword" type="password" />
+        							<h6 class="smallWeek" id="signupPwdStrength"></h6>
+    							</div>
+                			</p>
+                			
+                			<h5>Retype desired password</h5>
+            				<p>
+                				<div class="input-control text span6">
+        							<input id="signupPasswordRetyped" type="password" />
+        							<h6 class="smallText" id="signupPwdRetypeStrength"></h6>
+        							<h6 class="smallText" id="signupPwdNoMatch"></h6>
+    							</div>
+                			</p>
+                			
+                			<br />
+                			
+                			<button disabled id="signupButtonEnabled" class="standart bg-color-gray">Sign Up</button>
+                			
+                			<div id="signupUserExistsDiv" style="display: none">
+                				<ul class="replies">
+                                	<li class="bg-color-orange">
+                                    	<b class="sticker sticker-left sticker-color-orange"></b>
+                                    	<div class="avatar"><img src="images/myface.jpg" /></div>
+                                    	<div class="reply">
+                                        	<div class="author">Server says:</div>
+                                        	<div class="text">User name already exists. Are you sure you're using the right email address?</div>
+                                    	</div>
+                                	</li>
+                            	</ul>
+                            </div>
+                            
+                            <div id="signupUserException" style="display: none">
+                				<ul class="replies">
+                                	<li class="bg-color-red">
+                                    	<b class="sticker sticker-left sticker-color-red"></b>
+                                    	<div class="avatar"><img src="images/myface.jpg" /></div>
+                                    	<div class="reply">
+                                        	<div class="author">Server says:</div>
+                                        	<div class="text">Oops. An internal server exception has occurred. Please try again in a bit or contact support.</div>
+                                    	</div>
+                                	</li>
+                            	</ul>
+                            </div>
+                			
+            			</form>
+            			
+            		</div>
+            		
+            		<div class="span2">
+            		</div>
+            	</div>
+            </div>
+		</div>
+	</div>     		
+</div>
+
+<div id="logindiv" class="page secondary" style="display: none">
+	<div class="page-header">
+        <div class="page-header-content">
+            <h1>Login<small>...</small></h1>
+            <a href="javascript:history.back()" class="back-button big page-back"></a>
+        </div>
+    </div>
+    
+	<div class="page-region">
+    	<div class="page-region-content">
+        	
+            <div class="grid">
+            	<div class="row">
+            	
+            		<div class="span2">
+            		</div>
+            		
+            		<div class="span6">
+            			<form action="">
+
+            				<h5>User name (Email used for signing up)</h5>
+							<p>
+                				<div class="input-control text span6">
+        							<input id="loginUserName" type="text" />
+        							<h6 class="smallWeek" id="loginEmailMsg"></h6>
+    							</div>
+                			</p>
+
+                			<h5>Password</h5>
+							<p>
+                				<div class="input-control password span6">
+        							<input id="loginPassword" type="password" />
+    							</div>
+                			</p>
+                			
+                			<br />
+                			
+                			<p>
+                				<label class="input-control checkbox">
+        							<input id="LoginRememberMe" type="checkbox">
+        							<span class="helper">Remember me</span>
+    							</label>
+                			</p>
+                			
+                			<br />
+                			
+                			<button disabled id="loginButtonEnabled" class="standart bg-color-gray">Login</button>
+                			
+                			<div id="loginUserNotFoundDiv" style="display: none">
+                				<ul class="replies">
+                                	<li class="bg-color-orange">
+                                    	<b class="sticker sticker-left sticker-color-orange"></b>
+                                    	<div class="avatar"><img src="images/myface.jpg" /></div>
+                                    	<div class="reply">
+                                        	<div class="author">Server says:</div>
+                                        	<div class="text">User name / password combination not found. Are you sure? Have you activated your account?</div>
+                                    	</div>
+                                	</li>
+                            	</ul>
+                            </div>
+                            
+                            <div id="loginUserException" style="display: none">
+                				<ul class="replies">
+                                	<li class="bg-color-red">
+                                    	<b class="sticker sticker-left sticker-color-red"></b>
+                                    	<div class="avatar"><img src="images/myface.jpg" /></div>
+                                    	<div class="reply">
+                                        	<div class="author">Server says:</div>
+                                        	<div class="text">Oops. An internal server exception has occurred. Please try again in a bit or contact support.</div>
+                                    	</div>
+                                	</li>
+                            	</ul>
+                            </div>
+                            
+                		</form>	
+            		</div>
+            		
+            		<div class="span2">
+            		</div>
+            
+            	</div>
+            	
+            	<br />
+            	
+            	<div class="row">
+            		
+            		<div class="span2">
+            		</div>
+            		
+            		<div class="span6">
+            			<p>
+                        	Don't have an account? Then <a href="#/signup">Sign Up</a>
+                    	</p>
+                        <p>
+                        	Password or activation email lost? <a href="#/recover">Recover it</a>
+                    	</p>
+            		</div>
+            		
+            		<div class="span2">
+            		</div>
+
+            	</div>
+            </div>
+
+		</div>
+	</div>			
+</div>
+
+<div id="aboutdiv" class="page secondary" style="display: none">
+	<div class="page-header">
+        <div class="page-header-content">
+            <h1>About<small>...</small></h1>
+            <a href="javascript:history.back()" class="back-button big page-back"></a>
+        </div>
+    </div>
+    
+	<div class="page-region">
+    	<div class="page-region-content">
+        	<div class="span10">
+            	<h2>What...</h2>
+				<p>
+                	The Doc Portal is where you can easily search for common issues and access thorough <code>technical</code> documentation.
+                </p>
+            </div>
+            
+            <br />
+            
+            <div class="span10">
+            	<h2>Who...</h2>
+				<p>
+                	Developed by Doksend.
+                </p>
+            </div>
+            
+            <br />
+            
+            <div class="span10">
+            	<h2>Contact us...</h2>
+				<p>
+                	Queries? Suggestions? Want access? Then please email us:
+                </p>
+                <p>
+                	<a href="http://safemail.justlikeed.net/" target="_blank"><img src="http://safemail.justlikeed.net/e/c7272f8599ebf1e02930658d95ba30ce.png" border="0" align="absbottom" title="Email image created with safemail.justlikeed.net"></a>
+                </p>
+            </div>
+            
+            <br />
+            
+            <div class="span10">
+            	<h2>Technology...</h2>
+				<p>
+                	Developed with open source technology:
+                </p>
+                <br />
+                <p>
+                	<a class="fg-color-blue" href="http://www.nodejs.org"> - Node</a> - Platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications.
+                </p>
+                <p>
+                	<a class="fg-color-blue" href="http://expressjs.com/"> - Express</a> - Sinatra inspired web development framework for node.js.
+                </p>
+                <p>
+                	<a class="fg-color-blue" href="http://www.doksend.com/eFlowSdks/fcloud.html"> - Flexible Cloud DB</a> - Scalable, high-performance & asynchronous cloud DB API.
+                </p>
+                <p>
+                	<a class="fg-color-blue" href="http://aws.amazon.com/"> - Amazon Web Services</a> - (AWS) delivers a set of services that together form a reliable, scalable, and inexpensive computing platform “in the cloud”.
+                </p>
+                <p>
+                	<a class="fg-color-blue" href="http://jquery.com/"> - jQuery</a> - Fast and concise JavaScript Library that simplifies HTML development.
+                </p>
+            </div>
+		</div>
+	</div>			
+</div>
+
+<div class="page">
+	<div class="nav-bar">
+    	<div class="nav-bar-inner padding10">
+        	<span class="element">
+            	&copy;2013 - KB Portal - eFLOW
+            </span>
+        </div>
+    </div>
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.js"></script>
+
+<script src="js/director.min.js"></script>
+<script src="js/jquery.cookie.min.js"></script>
+<script src="js/jquery.highlight-4.closure.js"></script>
+<script src="js/jquery.reject.min.js"></script>
+<script src="js/jQuery.browser.mobile.js"></script>
+
+<script src="js/modern/dropdown.min.js"></script>
+
+<script src="js/jquery.autocomplete.min.js"></script>
+<script src="js/kbportal.min.js"></script>
+
+</body>
+</html>
